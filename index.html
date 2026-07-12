@@ -3,116 +3,234 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Loyola</title>
-
+  <title>Alex Loyola Docs</title>
+  <meta name="description" content="Alex Loyola Docs - CDL booklet download and instructions.">
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #f5f5f7;
-      color: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
+    :root {
+      color-scheme: light;
+      --bg: #f4efe6;
+      --bg-accent: #e7dcc7;
+      --panel: rgba(255, 255, 255, 0.86);
+      --text: #1f1a17;
+      --muted: #5f564f;
+      --accent: #8a4f22;
+      --accent-dark: #653715;
+      --border: rgba(31, 26, 23, 0.12);
+      --shadow: 0 20px 60px rgba(71, 41, 16, 0.14);
     }
 
-    .container {
-      max-width: 600px;
-      padding: 20px;
-      animation: fadeIn 0.6s ease;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.72), transparent 32%),
+        linear-gradient(180deg, var(--bg), var(--bg-accent));
+    }
+
+    .wrap {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 56px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 42px 24px 26px;
     }
 
     h1 {
-      font-size: 3rem;
-      margin: 0 0 12px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      letter-spacing: -0.04em;
+      line-height: 0.98;
     }
 
     .subtitle {
-      font-size: 1.2rem;
-      color: #666;
-      margin-bottom: 32px;
-      line-height: 1.4;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
+      margin: 14px auto 0;
+      max-width: 46rem;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      background: #0099cc;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
-      margin-bottom: 22px;
-      box-shadow: 0 4px 12px rgba(0, 153, 204, 0.3);
+      line-height: 1.6;
+      color: var(--muted);
     }
 
-    .button:hover {
-      background: #007fa8;
-      box-shadow: 0 6px 16px rgba(0, 153, 204, 0.4);
+    .card {
+      margin-top: 24px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
     }
 
-    .button:active {
-      transform: scale(0.98);
+    .image-shell {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
     }
 
-    .email {
+    .preview {
+      width: 100%;
       display: block;
-      font-size: 1rem;
-      color: #2563eb;
+      border-radius: 20px;
+      border: 1px solid rgba(31, 26, 23, 0.08);
+      box-shadow: 0 10px 30px rgba(31, 26, 23, 0.08);
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 28px 24px 32px;
+    }
+
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .download-copy h2,
+    .instructions h2 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    .download-copy p,
+    .instructions p,
+    .instructions li {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
       text-decoration: none;
-      margin-top: 10px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      box-shadow: 0 14px 30px rgba(138, 79, 34, 0.25);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .email:hover {
-      text-decoration: underline;
+    .download-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 34px rgba(138, 79, 34, 0.32);
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .instructions {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
     }
 
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 2.4rem;
+    ol {
+      margin: 14px 0 0;
+      padding-left: 22px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 20px, 960px);
+        padding-top: 20px;
       }
 
-      .subtitle {
-        font-size: 1.05rem;
+      .hero {
+        padding: 28px 12px 18px;
       }
 
-      .container {
-        padding: 24px;
+      .content {
+        padding: 20px 16px 24px;
+      }
+
+      .download-row {
+        align-items: stretch;
+      }
+
+      .download-link {
+        width: 100%;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Alex Loyola</h1>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Alex Loyola Docs</h1>
+      <p class="subtitle">
+        CDL booklet download page with the booklet preview and printed assembly steps.
+      </p>
+    </section>
 
-    <div class="subtitle">
-      Operations & Logistics | Team Leadership | Bilingual (EN/ES)
-    </div>
+    <section class="card" aria-label="CDL booklet download">
+      <div class="image-shell">
+        <img
+          class="preview"
+          src="CDL/cdlbooklet.jpg"
+          alt="CDL booklet cover preview"
+        >
+      </div>
 
-    <a class="button" href="/resume">View Resume</a>
+      <div class="content">
+        <div class="download-row">
+          <div class="download-copy">
+            <h2>Download</h2>
+            <p>Download the CDL booklet PDF here.</p>
+          </div>
 
-    <a class="email" href="mailto:alex.loyola.work@gmail.com">
-      alex.loyola.work@gmail.com
-    </a>
-  </div>
+          <a
+            class="download-link"
+            href="CDL/Preinspection%20and%20SOP_booklet_images.pdf"
+            download
+          >
+            Download PDF
+          </a>
+        </div>
+
+        <section class="instructions">
+          <h2>Instructions</h2>
+          <ol>
+            <li>print of both sides with flip on short edge.</li>
+            <li>Cut page in half.</li>
+            <li>place bottom half under and fold in half.</li>
+          </ol>
+          <p class="footer-note">
+            If the PDF opens in the browser, use the download button above to save it first.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
