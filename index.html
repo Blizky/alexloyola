@@ -8,15 +8,15 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #f4efe6;
-      --bg-accent: #e7dcc7;
-      --panel: rgba(255, 255, 255, 0.86);
-      --text: #1f1a17;
-      --muted: #5f564f;
-      --accent: #8a4f22;
-      --accent-dark: #653715;
-      --border: rgba(31, 26, 23, 0.12);
-      --shadow: 0 20px 60px rgba(71, 41, 16, 0.14);
+      --bg: #f7d700;
+      --bg-accent: #ffd400;
+      --panel: rgba(255, 255, 255, 0.92);
+      --text: #111111;
+      --muted: #2f2f2f;
+      --accent: #111111;
+      --accent-dark: #000000;
+      --border: rgba(0, 0, 0, 0.14);
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
     }
 
     * {
@@ -26,82 +26,83 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Georgia, "Times New Roman", serif;
       color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
       background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.72), transparent 32%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0)),
         linear-gradient(180deg, var(--bg), var(--bg-accent));
     }
 
     .wrap {
-      width: min(960px, calc(100% - 32px));
+      width: min(740px, calc(100% - 16px));
       margin: 0 auto;
-      padding: 40px 0 56px;
+      padding: 12px 0 18px;
     }
 
     .hero {
       text-align: center;
-      padding: 42px 24px 26px;
+      padding: 10px 8px 12px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.4rem, 6vw, 4.8rem);
-      letter-spacing: -0.04em;
-      line-height: 0.98;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
     }
 
     .subtitle {
-      margin: 14px auto 0;
-      max-width: 46rem;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-      line-height: 1.6;
+      max-width: 34rem;
+      margin: 8px auto 0;
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.45;
     }
 
     .card {
-      margin-top: 24px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
       overflow: hidden;
-      backdrop-filter: blur(10px);
+      margin-top: 10px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
     }
 
     .image-shell {
-      padding: 20px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.45);
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
     }
 
     .preview {
-      width: 100%;
       display: block;
-      border-radius: 20px;
-      border: 1px solid rgba(31, 26, 23, 0.08);
-      box-shadow: 0 10px 30px rgba(31, 26, 23, 0.08);
+      width: 100%;
+      max-height: 240px;
       object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
 
     .content {
-      padding: 28px 24px 32px;
+      padding: 14px 14px 16px;
     }
 
     .download-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
     }
 
     .download-copy h2,
     .instructions h2 {
-      margin: 0 0 8px;
-      font-size: 1.4rem;
+      margin: 0 0 4px;
+      font-size: 1.15rem;
       letter-spacing: -0.02em;
     }
 
@@ -109,69 +110,72 @@
     .instructions p,
     .instructions li {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.5;
     }
 
     .download-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 22px;
+      padding: 11px 16px;
       border-radius: 999px;
-      text-decoration: none;
-      color: #fff;
+      color: #f7d700;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      box-shadow: 0 14px 30px rgba(138, 79, 34, 0.25);
+      text-decoration: none;
       font-family: Arial, Helvetica, sans-serif;
-      font-weight: 700;
+      font-weight: 800;
       white-space: nowrap;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .download-link:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 34px rgba(138, 79, 34, 0.32);
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
     }
 
     .instructions {
-      margin-top: 28px;
-      padding-top: 24px;
+      margin-top: 12px;
+      padding-top: 12px;
       border-top: 1px solid var(--border);
     }
 
     ol {
-      margin: 14px 0 0;
-      padding-left: 22px;
-      font-family: Arial, Helvetica, sans-serif;
+      margin: 8px 0 0;
+      padding-left: 20px;
       color: var(--muted);
-      line-height: 1.8;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.55;
     }
 
     li + li {
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .footer-note {
-      margin-top: 18px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.94rem;
+      margin-top: 10px;
       color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
 
     @media (max-width: 720px) {
       .wrap {
-        width: min(100% - 20px, 960px);
-        padding-top: 20px;
+        width: min(100% - 12px, 740px);
+        padding-top: 8px;
       }
 
       .hero {
-        padding: 28px 12px 18px;
+        padding: 8px 4px 10px;
       }
 
       .content {
-        padding: 20px 16px 24px;
+        padding: 12px 12px 14px;
       }
 
       .download-row {
@@ -209,11 +213,7 @@
             <p>Download the CDL booklet PDF here.</p>
           </div>
 
-          <a
-            class="download-link"
-            href="CDL/Preinspection%20and%20SOP_booklet_images.pdf"
-            download
-          >
+          <a class="download-link" href="CDL/CDL_booklet.pdf" download>
             Download PDF
           </a>
         </div>
