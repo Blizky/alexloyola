@@ -1,236 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Loyola Docs</title>
-  <meta name="description" content="Alex Loyola Docs - CDL booklet download and instructions.">
-  <style>
-    :root {
-      color-scheme: light;
-      --bg: #f7d700;
-      --bg-accent: #ffd400;
-      --panel: rgba(255, 255, 255, 0.92);
-      --text: #111111;
-      --muted: #2f2f2f;
-      --accent: #111111;
-      --accent-dark: #000000;
-      --border: rgba(0, 0, 0, 0.14);
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0)),
-        linear-gradient(180deg, var(--bg), var(--bg-accent));
-    }
-
-    .wrap {
-      width: min(740px, calc(100% - 16px));
-      margin: 0 auto;
-      padding: 12px 0 18px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 10px 8px 12px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 0.96;
-      letter-spacing: -0.05em;
-    }
-
-    .subtitle {
-      max-width: 34rem;
-      margin: 8px auto 0;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.93rem;
-      line-height: 1.45;
-    }
-
-    .card {
-      overflow: hidden;
-      margin-top: 10px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-
-    .image-shell {
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.45);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .preview {
-      display: block;
-      width: 100%;
-      max-height: 240px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    .content {
-      padding: 14px 14px 16px;
-    }
-
-    .download-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .download-copy h2,
-    .instructions h2 {
-      margin: 0 0 4px;
-      font-size: 1.15rem;
-      letter-spacing: -0.02em;
-    }
-
-    .download-copy p,
-    .instructions p,
-    .instructions li {
-      margin: 0;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.93rem;
-      line-height: 1.5;
-    }
-
-    .download-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 16px;
-      border-radius: 999px;
-      color: #f7d700;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      text-decoration: none;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 800;
-      white-space: nowrap;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .download-link:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
-    }
-
-    .instructions {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
-    }
-
-    ol {
-      margin: 8px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.93rem;
-      line-height: 1.55;
-    }
-
-    li + li {
-      margin-top: 4px;
-    }
-
-    .footer-note {
-      margin-top: 10px;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-
-    @media (max-width: 720px) {
-      .wrap {
-        width: min(100% - 12px, 740px);
-        padding-top: 8px;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#08090b" />
+    <title>Alex Loyola</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --black: #08090b;
+        --charcoal: #111317;
+        --silver: #d5d7da;
+        --mist: #a2a7ad;
+        --line: rgba(213, 215, 218, .28);
       }
 
-      .hero {
-        padding: 8px 4px 10px;
+      * { box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 50%, #20242a 0%, var(--charcoal) 30%, var(--black) 72%);
+        color: var(--silver);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
 
-      .content {
-        padding: 12px 12px 14px;
+      main { width: min(92vw, 840px); text-align: center; }
+
+      h1 {
+        margin: 0 0 3.6rem;
+        color: #f2f3f4;
+        font-size: clamp(2.5rem, 7vw, 5.5rem);
+        font-weight: 300;
+        letter-spacing: .12em;
+        text-transform: uppercase;
       }
 
-      .download-row {
-        align-items: stretch;
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        border-block: 1px solid var(--line);
       }
 
-      .download-link {
-        width: 100%;
+      .section { position: relative; flex: 1; padding: 1.25rem .7rem; }
+      .section + .section { border-left: 1px solid var(--line); }
+      .section > button, .section > a {
+        display: inline-block;
+        padding: 0;
+        border: 0;
+        background: none;
+        color: var(--silver);
+        font: inherit;
+        font-size: clamp(.72rem, 1.5vw, .92rem);
+        font-weight: 600;
+        letter-spacing: .14em;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
       }
-    }
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <section class="hero">
-      <h1>Alex Loyola Docs</h1>
-      <p class="subtitle">
-        CDL booklet download page with the booklet preview and printed assembly steps.
-      </p>
-    </section>
+      .section > button:hover, .section > button:focus-visible, .section > a:hover, .section > a:focus-visible { color: white; outline: none; }
 
-    <section class="card" aria-label="CDL booklet download">
-      <div class="image-shell">
-        <img
-          class="preview"
-          src="CDL/cdlbooklet.jpg"
-          alt="CDL booklet cover preview"
-        >
-      </div>
+      .links {
+        position: absolute;
+        z-index: 1;
+        top: calc(100% - .4rem);
+        left: 50%;
+        width: max-content;
+        min-width: 10.5rem;
+        margin: 0;
+        padding: .55rem;
+        list-style: none;
+        background: #16191d;
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 36px rgba(0, 0, 0, .45);
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -.35rem);
+        transition: opacity .18s ease, transform .18s ease;
+      }
+      .section:hover .links, .section:focus-within .links { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+      .links a { display: block; padding: .7rem .85rem; color: var(--mist); font-size: .84rem; line-height: 1.35; text-align: left; text-decoration: none; }
+      .links small { display: block; margin-top: .18rem; color: #777d85; font-size: .76rem; }
+      .links a:hover, .links a:focus-visible { background: rgba(255,255,255,.08); color: white; outline: none; }
 
-      <div class="content">
-        <div class="download-row">
-          <div class="download-copy">
-            <h2>Download</h2>
-            <p>Download the CDL booklet PDF here.</p>
-          </div>
-
-          <a class="download-link" href="CDL/CDL_booklet.pdf" download>
-            Download PDF
-          </a>
+      @media (max-width: 560px) {
+        h1 { margin-bottom: 2.6rem; letter-spacing: .08em; }
+        nav { flex-wrap: wrap; }
+        .section { flex-basis: 50%; }
+        .section:nth-child(odd) { border-left: 0; }
+        .section:nth-child(n + 3) { border-top: 1px solid var(--line); }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Alex Loyola</h1>
+      <nav aria-label="Personal links">
+        <div class="section">
+          <button type="button">Social Media</button>
+          <ul class="links">
+            <li><a href="https://instagram.com/aloyola37" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://facebook.com/aloyola37" target="_blank" rel="noreferrer">Facebook</a></li>
+            <li><a href="https://x.com/aloyola37" target="_blank" rel="noreferrer">X</a></li>
+            <li><a href="https://bsky.app/profile/blizky.bsky.social" target="_blank" rel="noreferrer">Bluesky</a></li>
+          </ul>
         </div>
-
-        <section class="instructions">
-          <h2>Instructions</h2>
-          <ol>
-            <li>Print of both sides with flip on short edge.</li>
-            <li>Cut page in half.</li>
-            <li>Place bottom half under and fold in half.</li>
-          </ol>
-          <p class="footer-note">
-            If the PDF opens in the browser, use the download button above to save it first.
-          </p>
-        </section>
-      </div>
-    </section>
-  </main>
-</body>
+        <div class="section">
+          <button type="button">Photography</button>
+          <ul class="links">
+            <li><a href="https://www.pexels.com/@blizky/" target="_blank" rel="noreferrer">Pexels</a></li>
+            <li><a href="https://www.flickr.com/photos/armandoloyola/" target="_blank" rel="noreferrer">Flickr</a></li>
+          </ul>
+        </div>
+        <div class="section">
+          <button type="button">Video</button>
+          <ul class="links">
+            <li><a href="https://www.youtube.com/@peorcaso" target="_blank" rel="noreferrer">Peor Caso</a></li>
+            <li><a href="https://www.youtube.com/@Blizky" target="_blank" rel="noreferrer">Blizky</a></li>
+            <li><a href="https://www.youtube.com/@arloyola" target="_blank" rel="noreferrer">Arloyola</a></li>
+          </ul>
+        </div>
+        <div class="section">
+          <button type="button">Docs</button>
+          <ul class="links">
+            <li><a href="CDL/">CDL School Bus Guide</a></li>
+          </ul>
+        </div>
+        <div class="section">
+          <button type="button">Apps</button>
+          <ul class="links">
+            <li><a href="https://blizlab.com/" target="_blank" rel="noreferrer">Blizlab<small>Image editor &amp; parallax animation</small></a></li>
+            <li><a href="https://webprompter.app/" target="_blank" rel="noreferrer">WebPrompter<small>Browser teleprompter for scripts and recording</small></a></li>
+            <li><a href="https://threadmk.com/" target="_blank" rel="noreferrer">ThreadMK<small>Compose and organize social threads</small></a></li>
+            <li><a href="https://labs.blizlab.com/" target="_blank" rel="noreferrer">Labs<small>Utilities and experiments</small></a></li>
+          </ul>
+        </div>
+      </nav>
+    </main>
+  </body>
 </html>
